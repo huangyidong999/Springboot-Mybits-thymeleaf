@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script type="text/javascript" th:src="@{js/jquery.min.js}"></script>
+<link type="text/css" rel="stylesheet" th:href="@{css/bootstrap.min.css}"  />
+<script type="text/javascript" th:src="@{js/bootstrap.js}"></script>
+<body th:background="@{images/vlad.jpg}">
+    <div class="content">
+        <table th:class="table">
+            <thead>
+                <th>文章题目</th>
+            </thead>
+            <tbody>
+                <tr th:each="c:${cs}">
+                    <td><a th:text="${c.article_title}" th:href="@{/getArticle(id=${c.article_id})}"></a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

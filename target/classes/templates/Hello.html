@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script type="text/javascript" th:src="@{js/jquery.min.js}"></script>
+<link type="text/css" rel="stylesheet" th:href="@{css/bootstrap.min.css}"  />
+<script type="text/javascript" th:src="@{js/bootstrap.js}"></script>
+
+<style>
+    div{
+        margin: 5px;
+    }
+    .content{
+        text-align: center;
+    }
+
+</style>
+
+
+<body th:background="@{images/sunset.jpg}">
+<div class="content">
+
+    <div class="page-header">
+        <h1>Management System</h1>
+    </div>
+    <form action="/login" method="post">
+        <div class="input-group" style="width: 300px;margin: auto;">
+            <span class="input-group-addon" >userName</span>
+            <input name="userName" type="text" class="form-control" placeholder="用户名" aria-describedby="basic-addon1">
+        </div>
+
+        <div class="input-group" style="width: 300px;margin: auto;">
+            <span class="input-group-addon">passWord</span>
+            <input name="passWord" type="password" class="form-control" placeholder="密码" aria-describedby="basic-addon1">
+        </div>
+        <button class="btn btn-warning"><input type="submit" class="form-control" value="sign in"></button>
+    </form>
+
+</div>
+</body>
+
+</html>

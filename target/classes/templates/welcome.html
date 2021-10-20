@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script type="text/javascript" th:src="@{js/jquery.min.js}"></script>
+<link type="text/css" rel="stylesheet" th:href="@{css/bootstrap.min.css}"  />
+<script type="text/javascript" th:src="@{js/bootstrap.js}"></script>
+<style>
+    .content-nav{
+        margin-left: 10px;
+        height: 900px;
+        width: 120px;
+    }
+    #content-Introduction{
+        position: absolute;
+        left: 150px;
+        top: 10px;
+    }
+    #myTip{
+        position: absolute;
+        left: 150px;
+        top: 200px;
+    }
+</style>
+
+<body th:background="@{images/vlad.jpg}">
+    <div class="content-nav">
+
+    <ul th:each="c:${cs}" class="nav nav-pills nav-stacked">
+        <li role="presentation" class="active" ><a th:text="${c.name}" th:href="@{/articleListW(id=${c.id})}"></a></li>
+    </ul>
+
+    </div>
+    <div id="content-Introduction" class="panel panel-default">
+        <div class="panel-body">
+            大家好，欢迎访问.<br>
+            本站信息：<br>
+            spring-boot mybatis 架构，视图使用了thymeleaf，<br>
+            mysql：5.7.19  , jdk：1.8  IDE：IDEA<br>
+            欢迎交流，QQ：2923370475  e-mail:h2923370475@sohu.com<br>
+            想了解JAVA学习路径，如何学习的同学，请戳这个连接：<br><a href="https://www.baidu.com/">戳我</a><br>
+        </div>
+    </div>
+    <div id="myTip" class="panel panel-default">
+        <div class="panel-heading">Java学习路径</div>
+        <div class="panel-body">
+            <p>ok...</p>
+            <p>Java的学习书籍路线：1.大学的基础课程：《数据结构与算法》、《计算机网络》等，这些一定要了解，对自己当下可能没什么感觉
+                不过启发作用很大，后头很有用。
+            </p>
+            <p>
+                2.为了就业的学习，分几个方面，首先Java基础（推荐《Java核心技术》），然后是数据库知识（《Mysql必知必会》），其次
+                一定要学习关于虚拟机和设计模式的知识（推荐《深入理解Java虚拟机》、《HeadFirst设计模式》），最后，你需要具备最基本的前端
+                知识（Html+css+js），这时候，你已经可以出去找工作了，先从实习生做起，西安这边2000左右，加油！
+            </p>
+        </div>
+    </div>
+</body>
+</html>

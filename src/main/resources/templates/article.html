@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        p{
+
+            font-size: 30px;
+            font-style: inherit;
+            color: #245269;
+        }
+        .main{
+            text-align: center;
+        }
+    </style>
+</head>
+<script type="text/javascript" th:src="@{js/jquery.min.js}"></script>
+<link type="text/css" rel="stylesheet" th:href="@{css/bootstrap.min.css}"  />
+<script type="text/javascript" th:src="@{js/bootstrap.js}"></script>
+
+<body bgcolor="#f0f8ff" th:background="@{images/vlad.jpg}">
+    <div class="main">
+        <h1  th:text="${Ac.article_title}"></h1>
+        <p th:text="${Ac.article_content}"></p>
+    </div>
+    <br>
+    <a th:href="@{/articleListW(id=${Ac.article_category_id})}">返回</a>
+
+</body>
+</html>

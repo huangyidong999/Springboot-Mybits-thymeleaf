@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script type="text/javascript" th:src="@{js/jquery.min.js}"></script>
+<link type="text/css" rel="stylesheet" th:href="@{css/bootstrap.min.css}"  />
+<script type="text/javascript" th:src="@{js/bootstrap.js}"></script>
+<style>
+
+    #hao{
+        margin:0px auto;
+    }
+
+</style>
+<body th:background="@{images/vlad.jpg}">
+<div id="hao"  >
+    <form action="updateArticle" method="post">
+        title:<input name="article_title" th:value="${Ae.article_title}">
+        <br>
+        content:
+        <br>
+        <textarea th:cols="50" th:rows="16" name="article_content" th:value="${Ae.article_content}"  >
+        </textarea>
+        <input type="hidden" name="article_id" th:value="${Ae.article_id}">
+        <input type="hidden" name="article_category_id" th:value="${Ae.article_category_id}">
+        <br><br>
+        <p>---------------------------------</p>
+        <button type="submit">提交</button>
+    </form>
+</div>
+</body>
+</html>

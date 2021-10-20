@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>hello</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+<table align='center' border='1' cellspacing='0'>
+    <tr>
+        <td>id</td>
+        <td>name</td>
+    </tr>
+    <tr th:each="cs:${cs}">
+        <td th:text="${cs.id}"></td>
+        <td th:text="${cs.name}"></td>
+    </tr>
+</table>
+</body>
+</html>
