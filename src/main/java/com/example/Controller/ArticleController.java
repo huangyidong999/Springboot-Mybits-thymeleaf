@@ -13,6 +13,7 @@ import java.util.List;
 public class ArticleController {
     @Autowired
     public ArticleMapper articleMapper;
+    //
 
     @RequestMapping("articleList")
     public String articleList(int id,Model m, @RequestParam(value = "start", defaultValue = "0") int start, @RequestParam(value = "size", defaultValue = "5")int size)throws Exception{
