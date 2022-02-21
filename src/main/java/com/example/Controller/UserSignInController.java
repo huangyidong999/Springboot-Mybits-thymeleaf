@@ -19,6 +19,7 @@ public class UserSignInController {
         List<User> userList = userMapper.findAll();
         User u = userList.get(0);
         System.out.println(u.getName());
+
         if(username.compareTo(u.getName() ) == 0 && password.compareTo(u.getPassword()) == 0)
             return "redirect:listCategory";
 
