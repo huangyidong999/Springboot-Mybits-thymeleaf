@@ -24,4 +24,9 @@ public class welcomeMainPage {
     public String hello(){
         return "Hello";
     }
+
+    @RequestMapping("/ajaxTest")
+    public String ajaxTest(){
+        return "Hello";
+    }
 }

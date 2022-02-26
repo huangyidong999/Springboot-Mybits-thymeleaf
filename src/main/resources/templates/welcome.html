@@ -5,9 +5,31 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
+<script src="http://how2j.cn/study/vue.min.js"></script>
+<script src="http://how2j.cn/study/axios.min.js"></script>
 <script type="text/javascript" th:src="@{js/jquery.min.js}"></script>
 <link type="text/css" rel="stylesheet" th:href="@{css/bootstrap.min.css}"  />
 <script type="text/javascript" th:src="@{js/bootstrap.js}"></script>
+
+<script>
+    function testAjax() {
+        $.ajax({
+            url:"http://localhost:8080/ajaxTest",
+            success:function (data){
+                console.log(data.status)
+                if(data.status==200){
+                    alert("success!!!")
+                }else{
+                    alert("failed:");
+                }
+            },
+            error:function (data) {
+                console.log(data)
+            }
+
+        });
+    }
+</script>
 <style>
     .content-nav{
         margin-left: 10px;
@@ -56,6 +78,10 @@
                 and that is the reason why I create this webstie,
             </p>
         </div>
+    </div>
+
+    <div id="hero" >
+        <input type="button" onclick="testAjax()" value="please success!">
     </div>
 </body>
 </html>
