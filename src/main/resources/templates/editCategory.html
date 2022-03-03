@@ -4,7 +4,7 @@
     <title>hello</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
-<body th:background="@{images/vlad.jpg}">
+<body style="background-color: gray;">
 <div style="margin:0px auto; width:500px">
 
     <form action="updateCategory" method="post">
@@ -12,7 +12,7 @@
         name: <input name="name" th:value="${c.name}"/> <br/>
 
         <input name="id" type="hidden" th:value="${c.id}"/>
-        <button type="submit">提交</button>
+        <button type="submit">submit</button>
 
     </form>
 </div>

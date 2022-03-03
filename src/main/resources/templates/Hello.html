@@ -20,7 +20,7 @@
 </style>
 
 
-<body th:background="@{images/sunset.jpg}">
+<body style="background-color: gray;">
 <div class="content">
 
     <div class="page-header">
@@ -29,12 +29,12 @@
     <form action="/login" method="post">
         <div class="input-group" style="width: 300px;margin: auto;">
             <span class="input-group-addon" >userName</span>
-            <input name="userName" type="text" class="form-control" placeholder="用户名" aria-describedby="basic-addon1">
+            <input name="userName" type="text" class="form-control" placeholder="userName" aria-describedby="basic-addon1">
         </div>
 
         <div class="input-group" style="width: 300px;margin: auto;">
             <span class="input-group-addon">passWord</span>
-            <input name="passWord" type="password" class="form-control" placeholder="密码" aria-describedby="basic-addon1">
+            <input name="passWord" type="password" class="form-control" placeholder="Password" aria-describedby="basic-addon1">
         </div>
         <button class="btn btn-warning"><input type="submit" class="form-control" value="sign in"></button>
     </form>

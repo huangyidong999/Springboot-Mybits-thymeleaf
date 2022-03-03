@@ -4,7 +4,7 @@
     <title>hello</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
-<body th:background="@{images/vlad.jpg}">
+<body style="background-color: gray;">
 
 <div style="width:500px;margin:20px auto;text-align: center">
     <table align='center' border='1' cellspacing='0'>
@@ -17,24 +17,24 @@
         <tr th:each="c:${page.list}">
             <td th:text="${c.id}"></td>
             <td th:text="${c.name}"></td>
-            <td><a th:href="@{/editCategory(id=${c.id})}">编辑</a></td>
-            <td><a th:href="@{/deleteCategory(id=${c.id})}">删除</a></td>
+            <td><a th:href="@{/editCategory(id=${c.id})}">edit</a></td>
+            <td><a th:href="@{/deleteCategory(id=${c.id})}">delete</a></td>
             <td><a th:href="@{/articleList(id=${c.id})}">查看此类文章</a></td>
         </tr>
     </table>
     <br/>
     <div>
-        <a th:href="@{/listCategory(start=0)}">[首  页]</a>
-        <a th:href="@{/listCategory(start=${page.pageNum-1})}">[上一页]</a>
-        <a th:href="@{/listCategory(start=${page.pageNum+1})}">[下一页]</a>
-        <a th:href="@{/listCategory(start=${page.pages})}">[末  页]</a>
+        <a th:href="@{/listCategory(start=0)}">[Fisrt page]</a>
+        <a th:href="@{/listCategory(start=${page.pageNum-1})}">[Pre]</a>
+        <a th:href="@{/listCategory(start=${page.pageNum+1})}">[Nex]</a>
+        <a th:href="@{/listCategory(start=${page.pages})}">[Last Page]</a>
     </div>
     <br/>
     <form action="addCategory" method="post">
 
         类名: <input name="name"/> <br/>
         等级: <input lev="lev"/> <br/>
-        <button type="submit">提交</button>
+        <button type="submit">submit</button>
 
     </form>
 </div>

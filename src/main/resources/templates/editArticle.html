@@ -15,7 +15,7 @@
     }
 
 </style>
-<body th:background="@{images/vlad.jpg}">
+<body style="background-color: gray;">
 <div id="hao"  >
     <form action="updateArticle" method="post">
         title:<input name="article_title" th:value="${Ae.article_title}">
@@ -28,7 +28,7 @@
         <input type="hidden" name="article_category_id" th:value="${Ae.article_category_id}">
         <br><br>
         <p>---------------------------------</p>
-        <button type="submit">提交</button>
+        <button type="submit">submit</button>
     </form>
 </div>
 </body>

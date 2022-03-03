@@ -30,6 +30,7 @@
         });
     }
 </script>
+<!--
 <style>
     .content-nav{
         margin-left: 10px;
@@ -46,42 +47,170 @@
         left: 150px;
         top: 200px;
     }
+    .my_show_list{
+        width: 600px;
+        height: 400px;
+        background-color: #5e5e5e;
+    }
+</style>
+-->
+<style>
+
+    div.item img{
+        width:100%;
+    }
+    div#carousel-example-generic{
+        display: inline-block;
+        width:400px;
+        height: 250px;
+        margin-left: 20px;
+    }
+
+    .top_content{
+        margin-top: 5px;
+        display: inline-block;
+        width: max-content;
+        height: 250px;
+    }
+
+    .content-nav{
+        display: inline-block;
+        width: auto;
+        height: 200px;
+        vertical-align: top;
+    }
+
+    #myTip{
+        margin-top: 15px;
+    }
+
+    #content-Introduction{
+        display: inline-block;
+        vertical-align: top;
+    }
+
+    .my_tittle{
+        display: inline-block;
+        font-size: larger;
+        height: 250px;
+        width: 200px;
+        margin-left: 100px;
+        vertical-align: top;
+    }
+
+    .my_span{
+        color: #ff4843;
+        font-size: 30px;
+    }
+
 </style>
 
-<body th:background="@{images/vlad.jpg}">
-    <div class="content-nav">
+<body style="background-color: gray;">
 
-    <ul th:each="c:${cs}" class="nav nav-pills nav-stacked">
-        <li role="presentation" class="active" ><a th:text="${c.name}" th:href="@{/articleListW(id=${c.id})}"></a></li>
-    </ul>
+    <div class="all_content">
+        <div class="top_content">
+            <div class="content-nav">
 
-    </div>
-    <div id="content-Introduction" class="panel panel-default">
-        <div class="panel-body">
-            Welcome everyone!<br>
-            the frames we use here：<br>
-            spring-boot mybatis thymeleaf，<br>
-            mysql  ,  IDE：IDEA<br>
-            e-mail:yhuang36@lakeheadu.ca<br>
-            I also have a youtube channel here is the link：<br><a href="https://youtu.be/RbS6wD1obEE">youTubeLearn</a><br>
+                <ul th:each="c:${cs}" class="nav nav-pills nav-stacked">
+                    <li role="presentation" class="active" ><a th:text="${c.name}" th:href="@{/articleListW(id=${c.id})}"></a></li>
+                </ul>
+            </div>
+            <div id="content-Introduction" class="panel panel-default">
+                <div class="panel-body">
+                    <h1>Welcome everyone!</h1> <br>
+                    the frames we use here：<br>
+                    spring-boot mybatis thymeleaf，<br>
+                    mysql  ,  IDE：IDEA<br>
+                    e-mail:yhuang36@lakeheadu.ca<br>
+                    I also have a youtube channel here is the link：<br><a href="https://youtu.be/RbS6wD1obEE">youTubeLearn</a><br>
+                </div>
+            </div>
+
+            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+                </ol>
+
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner" role="listbox" >
+                    <div class="item active">
+                        <a href="http://localhost:8080/articleListW?id=1">
+                            <img src="https://images.unsplash.com/photo-1646151449686-b855e12acae3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1164&q=80" >
+                        </a>
+                        <div class="carousel-caption">
+                            <p class="my_span">Java</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <a href="http://localhost:8080/articleListW?id=2" >
+                            <img src="https://images.unsplash.com/photo-1646151453220-65965e946a55?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80">
+                        </a>
+                        <div class="carousel-caption">
+                            <p class="my_span">SQL</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <a href="http://localhost:8080/articleListW?id=3"><img src="https://images.unsplash.com/photo-1646151453226-06aab612454b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" ></a>
+                        <div class="carousel-caption">
+                            <p class="my_span">Html&Css</p>
+                        </div>
+                    </div>
+
+                    <div class="item">
+                        <a href="http://localhost:8080/articleListW?id=4"><img src="https://images.unsplash.com/photo-1646151453238-51af0ff9ef42?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" ></a>
+                        <div class="carousel-caption">
+                            <p class="my_span">Spring</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="my_tittle">
+                <h1>YiDong's Blog</h1><br>
+                <h1>Best Wish For You!</h1>
+            </div>
         </div>
-    </div>
-    <div id="myTip" class="panel panel-default">
-        <div class="panel-heading">Java How2Learn</div>
-        <div class="panel-body">
-            <p>ok...</p>
-            <p>I hope this website can help people who want to learn some about Java
-            </p>
-            <p>
-                Firstly, I think the best start is to run a project from others,
-                Then you may feel confuse about how it runs? therefore you will have the motivation to learn java
-                and that is the reason why I create this webstie,
-            </p>
+
+
+        <div id="myTip" class="panel panel-default">
+            <div class="panel-heading">Tips About Learning</div>
+            <div class="panel-body">
+                <p>I hope this website can help people who want to learn some about Java</p>
+                <p>
+                    The best way of learning Java is keep practice, I suggest start with a book like think in Java,
+                    you can try to run the code from the book, and start with do some changes, then you will convert
+                    knowlegement from book to your brain. Also you can learn Spring from the official website, it has
+                    all information you need, all you need to do just fellow the tutorial.
+                </p>
+            </div>
         </div>
+
+        <div id="my_Introduce" class="panel panel-default">
+            <div class="panel-heading">My Introduce</div>
+            <div class="panel-body">
+
+                <p>I hope this website can help people know me well</p>
+
+                <p>
+                    Firstly, I think I have a good code background
+                    I joined a code competition in China, which name as "lan qiao cup", it consist of three parts:
+                    province competition, national competition, and international competition, I get two awards in province
+                    and national competition. Also I spent much time on code signal which is a website for practicing algorithm.
+                    I also try to learn anything intersted me on code, like AngularJS, you can find all in my github:
+                    <a href="https://github.com/huangyidong999.">Github</a>.
+                    Sometimes, I also read some Jave source code, like the design of ArrayList, so I do learn some pattern
+                    Desgin from this.
+                    If you have any question please feel free to email me.
+
+                </p>
+            </div>
+        </div>
+
     </div>
 
-    <div id="hero" >
-        <input type="button" onclick="testAjax()" value="please success!">
-    </div>
 </body>
 </html>
