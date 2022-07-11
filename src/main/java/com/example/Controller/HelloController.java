@@ -47,4 +47,10 @@ public class HelloController {
 
         return list;
     }
+    @RequestMapping(value = "/api",method = RequestMethod.GET)
+    @ResponseBody
+    public String ajaxAPI(){
+        System.out.println("success");
+        return "hello";
+    }
 }

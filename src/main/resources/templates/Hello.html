@@ -20,6 +20,23 @@
 </style>
 
 
+<script>
+    function requestTest1(){
+        var info = $('#info').val();
+        $.ajax({
+            type:'GET', // method type
+            dataType:'text', // the return of expectational type from back
+            url:'/hello/api',
+            contentType: 'application/json; charset=utf-8',
+            success: function (){
+                $("#test1").html("successfully test");
+            },
+            error: function (){
+                $('#test1').html("sorry the test has failed")
+            }
+        });
+    }
+</script>
 <body style="background-color: gray;">
 <div class="content">
 
@@ -29,7 +46,9 @@
     <form action="/login" method="post">
         <div class="input-group" style="width: 300px;margin: auto;">
             <span class="input-group-addon" >userName</span>
-            <input name="userName" type="text" class="form-control" placeholder="userName" aria-describedby="basic-addon1">
+            <input id="info" name="userName" type="text" class="form-control" placeholder="userName" aria-describedby="basic-addon1"/>
+            <p class="card-text" id="test1"> </p>
+            <a href="#" class="btn btn-primary" onclick="requestTest1()">Test My UserName</a>
         </div>
 
         <div class="input-group" style="width: 300px;margin: auto;">
