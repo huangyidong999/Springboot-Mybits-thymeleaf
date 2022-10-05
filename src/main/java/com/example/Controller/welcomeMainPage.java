@@ -29,4 +29,9 @@ public class welcomeMainPage {
     public String ajaxTest(){
         return "Hello";
     }
+
+    @RequestMapping("/bootstrap")
+    public String HelloBootstrap(){
+        return "BootstrapExperiment";
+    }
 }
